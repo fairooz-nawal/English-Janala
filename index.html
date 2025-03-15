@@ -21,11 +21,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="max-w-7xl mx-auto poppins">
-    <header>
+<body class=" poppins">
+    <header class="max-w-7xl mx-auto">
         <nav>
             <div
-                class="flex items-center justify-between bg-slate-200 py-4 px-[120px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
+                class="z-10 flex items-center justify-between bg-slate-200 py-4 px-[120px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
                 <div class="flex items-center">
                     <p class="font-bold">English</p>
                     <div class="w-[40px] h-[40px]"><img src="./assets//logo.png" alt=""></div>
@@ -62,8 +62,12 @@
         </banner>
     </header>
 
-    <main class="w-full">
-        <section id="FAQ">
+    <main class="max-w-7xl mx-auto py-[100px]">
+        <section id="learn">
+            <h1 class="text-center text-5xl font-bold"><span class="text-blue-500">Let's</span> Learn Vocubularies
+            </h1><br><br>
+        </section>
+        <section id="FAQ" class="z-[-10]">
             <h1 class="text-center text-5xl font-bold"><span class="text-blue-500">Frequently</span> Asked Questions
             </h1><br><br>
             <div class="collapse collapse-plus bg-base-100 border border-base-300">
@@ -112,7 +116,36 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer class="border-t-2 border-slate-300">
+        <footer class="max-w-7xl mx-auto  footer flex justify-between bg-white text-neutral-content text-black py-[100px]">
+            <aside class="space-y-2">
+                <div class="flex items-center">
+                    <p class="font-bold">English</p>
+                    <div class="w-[40px] h-[40px]"><img src="./assets//logo.png" alt=""></div>
+                    <p class="font-bold hind">জানালা</p>
+                </div>
+              <p class="font-bold hind">ইংরেজি শিখুন সহজে</p>
+              <p>Providing ED-Tech Applications since 2025</p>
+            </aside>
+            <nav>
+              <h6 class="footer-title">Follow us</h6>
+              <div class="grid grid-flow-col gap-4">
+                <a>
+                  <img src="./assets/fb-thumb.png" alt="">
+                </a>
+                <a>
+                  <img src="./assets/github-thumb.png" alt="">
+                </a>
+                <a>
+                 <img src="./assets/instagram-thumb.png" alt="">
+                </a>
+                <a>
+                 <img src="./assets/youtube-thumb.png" alt="">
+                </a>
+              </div>
+            </nav>
+          </footer>
+    </footer>
 </body>
 
 </html>
