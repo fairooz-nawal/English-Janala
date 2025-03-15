@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,50 @@
     <!-- daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .poppins {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+        }
+
+        .hind{
+            font-family: "Hind Siliguri", sans-serif;
+            font-style: normal;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="max-w-7xl mx-auto poppins">
+    <header>
+        <nav>
+            <div class="flex items-center justify-between bg-slate-200 py-4 px-[60px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
+                <div class="flex items-center">
+                    <p class="font-bold">English</p>
+                    <div class="w-[40px] h-[40px]"><img src="./assets//logo.png" alt=""></div>
+                    <p class="font-bold hind">জানালা</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#FAQ"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img src="./assets/fa-circle-question.png" alt="" srcset="">FAQ</button></a>
+                    <a href="#learn"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img src="./assets/fa-book-open.png" alt=""> Learn</button></a>
+                    <a href="#logout"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img src="./assets/fa-arrow-right-from-bracket.png" alt=""> Log Out</button></a>
+                </div>
+            </div>
+        </nav>
+        <banner></banner>
+    </header>
+
+    <body>
+
+    </body>
+    <footer></footer>
 </body>
+
 </html>
