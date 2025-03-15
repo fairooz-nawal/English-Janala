@@ -25,7 +25,7 @@
     <header>
         <nav>
             <div
-                class="flex items-center justify-between bg-slate-200 py-4 px-[60px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
+                class="flex items-center justify-between bg-slate-200 py-4 px-[120px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
                 <div class="flex items-center">
                     <p class="font-bold">English</p>
                     <div class="w-[40px] h-[40px]"><img src="./assets//logo.png" alt=""></div>
@@ -44,15 +44,17 @@
         <banner>
             <div class="hero w-full min-h-screen">
                 <div class="hero-content flex-col lg:flex-row-reverse justify-between">
-                    <div class="w-2/5"><img src="./assets/hero-student.png"
-                        class="w-full rounded-lg" /></div>
+                    <div class="w-2/5"><img src="./assets/hero-student.png" class="w-full rounded-lg" /></div>
                     <div class="w-2/5 space-y-4">
                         <h1 class="text-5xl font-bold"><span class="text-blue-500">English</span> is Easy</h1>
                         <p class="py-6 hind">
-                            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
+                            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান,
+                            আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
                         </p>
-                        <input class="input input-bordered w-full" type="text" name="" placeholder="Enter Your Name" id=""><br>
-                        <input class="input input-bordered w-full" type="password" name="" placeholder="Enter Your Password" id=""><br>
+                        <input class="input input-bordered w-full" type="text" name="" placeholder="Enter Your Name"
+                            id=""><br>
+                        <input class="input input-bordered w-full" type="password" name=""
+                            placeholder="Enter Your Password" id=""><br>
                         <button class="btn btn-primary">Get Started</button>
                     </div>
                 </div>
@@ -60,9 +62,56 @@
         </banner>
     </header>
 
-    <body>
+    <main class="w-full">
+        <section id="FAQ">
+            <h1 class="text-center text-5xl font-bold"><span class="text-blue-500">Frequently</span> Asked Questions
+            </h1><br><br>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">1.What is the difference between var, let, and const?</div>
+                <div class="collapse-content text-sm">
+                    <p class=" text-gray-500">Var declares a variable with function scope, let declares a variable with block scope, and const declares a constant with block scope that cannot be reassigned.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">2. What is the difference between map(), forEach(), and filter()?</div>
+                <div class="collapse-content text-sm">
+                    <p class=" text-gray-500"></p>map() returns a new array with transformed elements, forEach() executes a function for each element without returning a value, and filter() returns a new array with elements that pass a condition.
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">3. Explain arrow functions and how they are different from regular functions</div>
+                <div class="collapse-content text-sm">
+                    <p class=" text-gray-500">Arrow functions are a concise way to define small, single-purpose functions. They are defined using the => syntax and have the following characteristics:
 
-    </body>
+                        Implicit return: If the function body is a single expression, the return statement is implied.
+                        No this binding: Arrow functions do not have their own this context, they inherit it from the surrounding scope.
+                        No arguments object: Arrow functions do not have an arguments object, use rest parameters instead.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">4. How JavaScript Promises work?</div>
+                <div class="collapse-content text-sm">
+                    <p class=" text-gray-500">A Promise is a result object that is used to handle asynchronous operations. It represents a value that may not be available yet, but will be resolved at some point in the future.</p>
+                <ol>
+                    <li>Pending: Initial state, neither fulfilled nor rejected.</li>
+                    <li>Fulfilled: Successful operation, promise is resolved with a value.</li>
+                    <li>Rejected: Failed operation, promise is rejected with an error.</li>
+                </ol>
+            </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">5.How closures work in JavaScript?</div>
+                <div class="collapse-content text-sm">
+                    <p class=" text-gray-500">A closure is a function that has access to its own scope, as well as the scope of its outer functions, even when the outer functions have returned.</p>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
 </body>
 
