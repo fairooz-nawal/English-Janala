@@ -5,13 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Janala</title>
-
-    <!-- tailwind cdn -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
-    <!-- daisy ui cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
 
     <!-- google font cdn -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,37 +13,51 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!-- tailwind cdn -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-    <style>
-        .poppins {
-            font-family: "Poppins", sans-serif;
-            font-style: normal;
-        }
-
-        .hind{
-            font-family: "Hind Siliguri", sans-serif;
-            font-style: normal;
-        }
-    </style>
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="max-w-7xl mx-auto poppins">
     <header>
         <nav>
-            <div class="flex items-center justify-between bg-slate-200 py-4 px-[60px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
+            <div
+                class="flex items-center justify-between bg-slate-200 py-4 px-[60px] fixed top-0 left-0 w-full border-b-2 border-slate-300">
                 <div class="flex items-center">
                     <p class="font-bold">English</p>
                     <div class="w-[40px] h-[40px]"><img src="./assets//logo.png" alt=""></div>
                     <p class="font-bold hind">জানালা</p>
                 </div>
                 <div class="flex gap-4">
-                    <a href="#FAQ"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img src="./assets/fa-circle-question.png" alt="" srcset="">FAQ</button></a>
-                    <a href="#learn"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img src="./assets/fa-book-open.png" alt=""> Learn</button></a>
-                    <a href="#logout"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img src="./assets/fa-arrow-right-from-bracket.png" alt=""> Log Out</button></a>
+                    <a href="#FAQ"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img
+                                src="./assets/fa-circle-question.png" alt="" srcset="">FAQ</button></a>
+                    <a href="#learn"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img
+                                src="./assets/fa-book-open.png" alt=""> Learn</button></a>
+                    <a href="#logout"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img
+                                src="./assets/fa-arrow-right-from-bracket.png" alt=""> Log Out</button></a>
                 </div>
             </div>
         </nav>
-        <banner></banner>
+        <banner>
+            <div class="hero w-full min-h-screen">
+                <div class="hero-content flex-col lg:flex-row-reverse justify-between">
+                    <div class="w-2/5"><img src="./assets/hero-student.png"
+                        class="w-full rounded-lg" /></div>
+                    <div class="w-2/5 space-y-4">
+                        <h1 class="text-5xl font-bold"><span class="text-blue-500">English</span> is Easy</h1>
+                        <p class="py-6 hind">
+                            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
+                        </p>
+                        <input class="input input-bordered w-full" type="text" name="" placeholder="Enter Your Name" id=""><br>
+                        <input class="input input-bordered w-full" type="password" name="" placeholder="Enter Your Password" id=""><br>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </banner>
     </header>
 
     <body>
