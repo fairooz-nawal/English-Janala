@@ -1,5 +1,9 @@
-
-
+const removeActiveClass = () => {
+    const activeButton = document.getElementsByClassName('active');
+    for (const button of activeButton) {
+        button.classList.remove('active');
+    };
+}
 const loadLesson = () => {
     fetch('https://openapi.programming-hero.com/api/levels/all')
         .then(res => res.json())
@@ -12,7 +16,7 @@ const displayLesson = data => {
     for (const level of data) {
         const buttonContainer = document.createElement('div');
         buttonContainer.innerHTML = `
-        <button onclick ="loadCategoryWords(${level.level_no})" class="btn border-2 border-blue-700 bg-white hover:bg-blue-300 text-blue-700">
+        <button id="${level.id}" onclick ="loadCategoryWords(${level.level_no},id)" class="btn border-2 border-blue-700 bg-white hover:bg-blue-300 text-blue-700">
         <img src="./assets/fa-book-open.png" alt="">
         Lesson- ${level.level_no}
         </button>`
@@ -20,10 +24,15 @@ const displayLesson = data => {
     }
 }
 
-const loadCategoryWords = (level) => {
+const loadCategoryWords = (level,id) => {
     fetch(`https://openapi.programming-hero.com/api/level/${level}`)
         .then(res => res.json())
-        .then(data => displayCategoryWord(data.data))
+        .then(data =>{
+            removeActiveClass();
+            console.log(id);
+            const button = document.getElementById(id);
+            button.classList.add('active');
+            displayCategoryWord(data.data)});
 }
 
 //   "id": 4,
@@ -33,7 +42,6 @@ const loadCategoryWords = (level) => {
 //   "pronunciation": "ডিলিজেন্ট
 
 const displayCategoryWord = data => {
-    console.log(data);
     const levelWord = document.getElementById('lessonWord');
     levelWord.innerHTML = '';
     if (data.length == 0) {
@@ -53,7 +61,6 @@ const displayCategoryWord = data => {
         for (const word of data) {
             levelWord.classList.remove('grid-cols-1');
             levelWord.classList.add('grid-cols-3');
-            console.log(word.word);
             const card = document.createElement('div');
             card.innerHTML = `
             <div class="card w-96 bg-base-100 card-xl shadow-sm">
