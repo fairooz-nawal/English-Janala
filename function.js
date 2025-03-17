@@ -1,3 +1,5 @@
+
+
 const loadLesson = () => {
     fetch('https://openapi.programming-hero.com/api/levels/all')
         .then(res => res.json())
@@ -6,18 +8,51 @@ const loadLesson = () => {
 loadLesson()
 
 const displayLesson = data => {
-    console.log(data);
     const lessonContainer = document.getElementById('lessonbtn');
     for (const level of data) {
-        const button = document.createElement('button');
-        button.classList.add('btn', 'border-2', 'border-blue-700', 'bg-white', 'hover:bg-blue-300', 'text-blue-700');
-        button.innerText = "Lesson-"+ level.level_no;
-        const img = document.createElement('img');
-        img.src = './assets/fa-book-open.png';
-        img.alt = '';
-        button.appendChild(img);
-        
-        lessonContainer.appendChild(button);
+        const buttonContainer = document.createElement('div');
+        buttonContainer.innerHTML = `
+        <button onclick ="loadCategoryWords(${level.level_no})" class="btn border-2 border-blue-700 bg-white hover:bg-blue-300 text-blue-700">
+        <img src="./assets/fa-book-open.png" alt="">
+        Lesson- ${level.level_no}
+        </button>`
+        lessonContainer.appendChild(buttonContainer);
     }
+}
 
+const loadCategoryWords = (level) => {
+    fetch(`https://openapi.programming-hero.com/api/level/${level}`)
+        .then(res => res.json())
+        .then(data => displayCategoryWord(data.data))
+}
+
+    //   "id": 4,
+    //   "level": 5,
+    //   "word": "Diligent",
+    //   "meaning": "পরিশ্রমী",
+    //   "pronunciation": "ডিলিজেন্ট
+
+const displayCategoryWord = data => {
+    const levelWord = document.getElementById('lessonWord');
+    levelWord.classList.remove('grid-cols-1');
+    levelWord.classList.add('grid-cols-3');
+    levelWord.innerHTML = '';
+    for(const word of data){
+        console.log(word.word);
+        const card = document.createElement('div');
+        card.innerHTML = `
+        <div class="card w-96 bg-base-100 card-xl shadow-sm">
+         <div class="card-body text-center space-y-2">
+             <h2 class="text-2xl font-bold text-center">${word.word}</h2>
+             <p>Meaning/Pronounciation</p>
+              <h2 class="text-2xl font-bold text-gray-500 text-center">"${word.meaning}/${word.pronunciation}"</h2><br>
+             <div class="justify-between card-actions">
+                 <button class="btn w-[60px]"> <img class="w-9/12" src="./assets/info.png" alt=""></button>
+                 <button class="btn w-[60px]"> <img class="w-9/12" src="./assets/sound (1).png" alt=""></button>
+             </div>
+        </div>
+        </div>`
+        levelWord.appendChild(card);
+    }
+   
 }
