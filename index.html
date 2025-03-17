@@ -18,6 +18,7 @@
 
     <!-- daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -32,11 +33,11 @@
                     <p class="font-bold hind">জানালা</p>
                 </div>
                 <div class="flex gap-4">
-                    <a id="faqbtn" href="#FAQ"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white"><img
+                    <a id="faqbtn" href="#FAQ"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img
                                 src="./assets/fa-circle-question.png" alt="" srcset="">FAQ</button></a>
-                    <a id="learnmore" href="#learn"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white"><img
+                    <a id="learnmore" href="#learn"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img
                                 src="./assets/fa-book-open.png" alt=""> Learn</button></a>
-                    <a href="#logout"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white"><img
+                    <a href="#logout"><button class="btn rounded-lg border-2 border-blue-800 text-blue-800"><img
                                 src="./assets/fa-arrow-right-from-bracket.png" alt=""> Log Out</button></a>
                 </div>
             </div>
@@ -67,18 +68,52 @@
             <div>
                 <h1 class="text-center text-4xl font-bold"><span class="text-blue-500">Let's</span> Learn Vocubularies
                 </h1><br><br>
-                <div id="lessonbtn" class="flex gap-3 justify-center">
-                </div>
-            </div>
-          
-          
+                <div id="lessons" class="flex flex-wrap gap-4 justify-center mb-8"></div>
 
-            <div id="lessonWord" class="hero-content grid grid-cols-1 my-10 max-w-8xl mx-auto bg-slate-50">
+            
+
+    <!-- Vocabulary Cards -->
+    <div id="vocab-cards" class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center p-7 gap-x-6 gap-y-9 "></div>
+            </div>
+           
+        
+
+
+            
+<dialog id="wordModal" class="modal">
+    <div class="modal-box">
+      <h3 id="modalWord" class="font-bold text-lg"></h3>
+      <h3 class="font-bold mt-4">Meaning:</h3>
+      <p id="modalPronunciation" class="py-2"></p>
+      <h3 class="font-bold mt-4">Example:</h3>
+      <p id="modalSentence" class="py-2"></p>
+
+      
+      <h3 class="font-bold mt-4">সমার্থক শব্দ গুলো:</h3>
+      <p id="modalSynonyms" class="py-2"></p>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Complete Learning</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+
+           
+
+            <div id="lessonWord" class="hero-content flex-col lg:flex-row  my-10 max-w-8xl mx-auto bg-slate-50  mb-14">
                 <div class="space-4 text-center py-10">
                     <p class="py-6 text-gray-500">আপনি এখনো কোন Lesson Select করেন ন</p>
                     <h1 class="text-3xl font-bold">একটি Lesson Select করুন। </h1>  
                 </div>
             </div>
+
+            <div id="lessonWord1" class="hero-content flex-col lg:flex-row  my-10 max-w-8xl mx-auto bg-slate-50   ">
+                
+            </div>
+
+           
 
         </section>
         <section id="FAQ" class="z-[-10] max-w-7xl mx-auto">
