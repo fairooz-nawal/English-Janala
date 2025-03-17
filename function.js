@@ -26,33 +26,50 @@ const loadCategoryWords = (level) => {
         .then(data => displayCategoryWord(data.data))
 }
 
-    //   "id": 4,
-    //   "level": 5,
-    //   "word": "Diligent",
-    //   "meaning": "পরিশ্রমী",
-    //   "pronunciation": "ডিলিজেন্ট
+//   "id": 4,
+//   "level": 5,
+//   "word": "Diligent",
+//   "meaning": "পরিশ্রমী",
+//   "pronunciation": "ডিলিজেন্ট
 
 const displayCategoryWord = data => {
+    console.log(data);
     const levelWord = document.getElementById('lessonWord');
-    levelWord.classList.remove('grid-cols-1');
-    levelWord.classList.add('grid-cols-3');
     levelWord.innerHTML = '';
-    for(const word of data){
-        console.log(word.word);
+    if (data.length == 0) {
+            levelWord.classList.remove('grid-cols-3');
+            levelWord.classList.add('grid-cols-1');
         const card = document.createElement('div');
         card.innerHTML = `
-        <div class="card w-96 bg-base-100 card-xl shadow-sm">
-         <div class="card-body text-center space-y-2">
-             <h2 class="text-2xl font-bold text-center">${word.word}</h2>
-             <p>Meaning/Pronounciation</p>
-              <h2 class="text-2xl font-bold text-gray-500 text-center">"${word.meaning}/${word.pronunciation}"</h2><br>
-             <div class="justify-between card-actions">
-                 <button class="btn w-[60px]"> <img class="w-9/12" src="./assets/info.png" alt=""></button>
-                 <button class="btn w-[60px]"> <img class="w-9/12" src="./assets/sound (1).png" alt=""></button>
-             </div>
+        <div class="space-4 text-center py-10 mx-auto">
+            <div class="w-[100px] mx-auto"><img src="./assets/alert-error.png" alt=""></div>
+            <p class="py-6 text-gray-500">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h1 class="text-3xl font-bold">নেক্সট Lesson এ যান</h1>
         </div>
-        </div>`
+        `
         levelWord.appendChild(card);
     }
-   
+    else {
+        for (const word of data) {
+            levelWord.classList.remove('grid-cols-1');
+            levelWord.classList.add('grid-cols-3');
+            console.log(word.word);
+            const card = document.createElement('div');
+            card.innerHTML = `
+            <div class="card w-96 bg-base-100 card-xl shadow-sm">
+             <div class="card-body text-center space-y-2">
+                 <h2 class="text-2xl font-bold text-center">${word.word}</h2>
+                 <p>Meaning/Pronounciation</p>
+                  <h2 class="text-2xl font-bold text-gray-500 text-center">"${word.meaning}/${word.pronunciation}"</h2><br>
+                 <div class="justify-between card-actions">
+                     <button class="btn w-[60px]"> <img class="w-9/12" src="./assets/info.png" alt=""></button>
+                     <button class="btn w-[60px]"> <img class="w-9/12" src="./assets/sound (1).png" alt=""></button>
+                 </div>
+            </div>
+            </div>`
+            levelWord.appendChild(card);
+        }
+    }
+
+
 }
